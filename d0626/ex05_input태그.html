@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05_input태그</title>
+</head>
+
+<body>
+    <h1>ex05_input태그</h1>
+    <h4>type="text"</h4>
+    아이디 :<input type="text" name="mid" placeholder="아이디 입력..." value="pyj_id">
+    <!-- disabled -->
+    <!-- readonly -->
+    <!-- 값(value) pyj_id -->
+<hr>
+    <h4> type="date"</h4>
+    <input type="date">
+<hr>
+    <h4>type = "number"</h4>
+    <input type="number" min="0" max="5" stop="4">
+<hr>
+    <h4>type = "radio"</h4>
+    <!-- name 속성의 값이 같은 그룹에서 1개만 선택 가능 -->
+    <input type="radio" name="loc" value="seoul"> 서울
+    <input type="radio" name="loc" value="incheon" checked> 인천
+    <input type="radio" name="loc" value="busan"> 부산
+<hr>
+    <h4>type = "checkbox"</h4>
+    <input type="checkbox" name="subject" value="JAVA">자바
+    <input type="checkbox" name="subject" value="oracle">오라클
+    <input type="checkbox" name="subject" value="HTML">HTML
+    <!-- String[] subject = {"JAVA", "ORACLE", "HTML"} -->
+
+
+    <br><hr>
+    <h4>type = "color"</h4>
+    <input type="color" name="colorVal">
+    <br><hr>
+    <h4>type = "email"</h4>
+    <input type="email">
+    <hr>
+    <h4>type = "file"</h4>
+    <input type="file" name="file">
+
+    <h4>textarea 태그</h4>
+    <textarea name="" cols="30" rows="10"></textarea>
+    <!-- row : 몇 줄 cols : 몇 글자 -->
+
+    <hr>
+    <h4>type = "submit"</h4>
+    <input type="submit">
+</body>
+
+</html>

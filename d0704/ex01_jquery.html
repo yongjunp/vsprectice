@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01_jquery.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+        // $(document).ready(function () {
+        //     let h4Text = $("h4").text();
+        //     console.log("h4Text : " + h4Text);
+        // });
+
+        $(function () {
+            let h4Text = $("h4").text();
+            console.log("h4Text : " + h4Text);
+        })
+
+    </script>
+</head>
+
+<body>
+    <h2>ex01_jquery.html</h2>
+    <p id="p01">p태그</p>
+    <h3>h3태그 입니다.</h3>
+
+    <hr>
+    <h4> h4 태그입니다.</h4>
+</body>
+<script>
+    //jquery......
+    let a = document.querySelector("h2");
+    document.querySelector("h2").innerText = "h2태그";
+    $("h2").text("jquery로 수정"); // set ...
+    let h3Text = document.querySelector("h3").innerText;
+    console.log("h3Text : " + h3Text);
+
+    let h3Jq = $("h3").text(); // get ...
+    console.log("h3Jq : " + h3Jq);
+
+
+    document.querySelector("#p01");
+    document.getElementById("p01");
+    $("#p01")
+</script>
+
+</html>

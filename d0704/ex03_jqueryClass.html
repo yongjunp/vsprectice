@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_jqueryClass.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .bgRed {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ex03_jqueryClass.html</h1>
+    <h1>ex03_jqueryClass.html</h1>
+    <h1>ex03_jqueryClass.html</h1>
+    <button id="btn01">클릭01!</button>
+    <button id="btn02">클릭02!</button>
+
+    <button id="btn03">클릭03!</button>
+    <div>
+        <!-- focus, blur -->
+        <input type="text" value="input01">
+    </div>
+    <div>
+        <input type="text" value="input02">
+    </div>
+    <div>
+        <input type="text" value="input03">
+    </div>
+</body>
+<script>
+    $("#btn03").click(function(){
+        alert("버튼03 클릭!")
+    });
+
+    $("input").focus(function( e ){
+        console.log("포커스!!")
+        // e.target.value = "1234"
+        // let inputVal = $(e.target).val();
+        // console.log(inputVal);
+        $(e.target).parent().addClass("bgRed");
+    });
+    $("input").blur(function(e){
+        $(e.target).parent().removeClass("bgRed");
+
+    })
+</script>
+<script>
+    let btn01El = document.getElementById("btn01");
+    btn01El.addEventListener('click', function () {
+        alert("버튼01 클릭!")
+        btn01El.innerText = "CLICK01!!"
+    })
+
+    document.getElementById("btn02").addEventListener('click', function (e) {
+        alert("버튼02 클릭!")
+        // e.target = 이벤트가 실행된 Element
+        e.target.innerText = "CLICK02!!";
+    })
+</script>
+<script>
+    // class 속성 부여 addClass("값")
+    $("h1").eq(0).addClass("bgRed");
+
+    // class 값 제거 remonveClass("값")
+    $("h1").eq(0).removeClass("bgRed");
+
+    // class 값 부여 또는 제거 toggleClass("값");
+    $("h1").eq(0).toggleClass("bgRed");
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .reWriter{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>createElement</h2>
+    <button onclick="replyList()">댓글 출력</button>
+    <!-- 댓글 출력 div -->
+    <div id="reListArea">
+        <!-- <p> <span>댓글 작성자</span><span>댓글 내용</span></p> -->
+    </div>
+</body>
+<script>
+    // <div>
+    //     <p>댓글 작성자</p>
+    //     <p>댓글 내용</p>
+    // </div>
+    function replyList() {
+        let reArea = document.querySelector("#reListArea");
+        for(let i = 0; i<5; i++){
+            let reDiv = document.createElement("div"); // <div></div>
+
+            let reWriter = document.createElement("p"); // <p></p>
+            reWriter.innerText = "작성자" + i; // <p>작성자</p>
+            reDiv.appendChild(reWriter);
+            reWriter.classList.add("reWriter");
+            
+            let reComment = document.createElement("p"); // <p></P>
+                reComment.innerText = "댓글 내용" + i; // <p>댓글 내용</p>
+                reDiv.appendChild(reComment);
+                
+                reArea.appendChild(reDiv);
+            }
+    }
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02_js.html</title>
+</head>
+<body>
+    <h3 id="id01">ex02_js.html</h3>
+    <input type="text" onkeyup="changeText(this.value)">
+    <input type="button" value="버튼">
+    <button type="button" onclick="func01()">택스트수정</button>
+</body>
+<script>
+    function func01(){
+        console.log("func01() 호출");
+        document.getElementById("id01").innerText = "JAVASCRIPT";
+    }
+
+    function changeText(textVal){
+        document.getElementById("id01").innerText = textVal;
+    }
+    // changeText("자바스크립트!")
+
+</script>
+</html>

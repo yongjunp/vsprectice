@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02_joinForm.html</title>
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h3>ex02_joinForm.html</h3>
+    <!-- 
+        1. 아이디
+        2. 비밀번호
+        3. 이름
+        4. 이메일
+        5. 생년월일
+     -->
+    <!-- method의 기본값은 get -->
+    <form action="회원가입처리URL" method="get" target=" ">
+        <table>
+            <caption>표 제목 태그</caption>
+            <tr>
+                <th colspan="2">회원 가입</th>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="mid" placeholder="아이디를 입력하세요."></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="mpw" placeholder="비밀번호를 입력하세요."></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="mname"></td>
+            </tr>
+            <tr>
+                <td><label for="email">이메일</label></td>
+                <td><input type="email" name="memail" id="email"></td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td><input type="date"="mbirth"></td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" value="가입완료">
+                    <!-- button태그가 form안에 들어가있으면 submid으로 작동함 -->
+                                <button>회원가입 버튼</button>
+                                <button type = "button">메뉴</button>
+                                <input type="reset" value="초기화">
+                </th>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

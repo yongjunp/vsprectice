@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05_scores.html</title>
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+
+        }
+
+        th,
+        td,
+        tr {
+            padding: 10px;
+        }
+
+        tr>td {
+            text-align: center;
+        }
+        table{
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>ex05_scores.html</h1>
+    <table>
+        <tr>
+            <td colspan="2">성적계산기</td>
+        </tr>
+        <tr>
+            <th>정수입력</th>
+            <td><input type="text" id="inputScore"></td>
+        </tr>
+        <tr>
+            <th>결과</th>
+            <td id="resulttable">
+                <p id="resultText" style = "width: 270.38px; height: 21.11px;"></p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="addScore()">입력</button>
+                <button onclick="printScore()">출력</button>
+                <button onclick="sumScore()">총점</button>
+                <button onclick="avgScore()">평균</button>
+
+            </th>
+        </tr>
+    </table>
+</body>
+<script>
+
+    let resultEl = document.getElementById("resultText");
+    let inputEl = document.getElementById("inputScore");
+
+    let scoreList = [];
+    function addScore() {
+
+        let score = document.getElementById("inputScore").value;
+        //score.leght == 0 , score == ""
+
+        let scoreNum = Number(score)
+        console.log(typeof (score))
+        console.log(typeof (scoreNum))
+        console.log(scoreNum); //NAN
+        console.log(isNaN(scoreNum));
+        if (isNaN(scoreNum)) {
+            // 입력한 성적이 숫자가 아닐 경우
+            // alert("점수를 다시 입력해주세요!")
+            resultEl.innerText = "점수를 다시 입력해주세요!"
+        } else if (score == "") {
+            // 입력한 성적이 숫자일 경우
+            resultEl.innerText = "점수를 입력해주세요!"
+        } else if (scoreNum >= 100 || scoreNum <= 0){
+            resultEl.innerText = "0 부터 100까지에 점수를 입력하세요!";
+        } else {
+            resultEl.innerText = "성적이 입력 되었습니다."
+            scoreList.push(scoreNum);
+            inputEl.value = "";
+        }
+        inputEl.focus();
+
+        
+    }
+    function printScore() {
+            let outScore = "";
+        for(let i = 0; i<scoreList.length; i++){
+            outScore = outScore + (i+1) + "번째 점수 : " + scoreList[i] + "\n"
+            
+        }
+        if(scoreList.length == 0){
+            resultEl.innerText = "성적이 입력되지 않았습니다."
+        } else{
+            resultEl.innerText = outScore;
+        }
+    }
+    function sumScore(){
+        let sumS = 0;
+        for(let i =0; i<scoreList.length; i++){
+            sumS += Number(scoreList[i]);
+        }
+        
+        resultEl.innerText = "총점은 [" + sumS + "] 입니다."
+    }
+    function avgScore(){
+        let avgS = 0;
+        for(let i =0; i<scoreList.length; i++){
+            avgS += Number(scoreList[i]);
+        }
+        avgS = avgS/scoreList.length
+        resultEl.innerText = "평균은 [" + avgS +"] 입니다."
+    }
+</script>
+</html>

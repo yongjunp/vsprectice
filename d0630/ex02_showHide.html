@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02_showHide.html</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            border: 1px solid salmon;
+            padding: 10px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .clickMenu {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ex02_showHide.html</h2>
+    <hr>
+    <button class="menuBtn clickMenu" onclick="menuClick(this)">메뉴1</button>
+    <button class="menuBtn" onclick="menuClick(this)">메뉴2</button>
+    <button class="menuBtn" onclick="menuClick(this)">메뉴3</button>
+    <button class="menuBtn" onclick="menuClick(this)">메뉴4</button>
+    <hr>
+    <div id="div01" class = "contentDiv">내용1</div>
+    <div id="div02" class="contentDiv d-none">내용2</div>
+    <div id="div03" class="contentDiv d-none">내용3</div>
+    <div id="div04" class="contentDiv d-none">내용4</div>
+
+</body>
+<script>
+    function menuClick(menuObj) {
+        let btnList = document.getElementsByClassName("menuBtn");
+        for (let btnObj of btnList) {
+            btnObj.classList.remove("clickMenu");
+        }
+        menuObj.classList.add("clickMenu");
+        let divList = document.getElementsByClassName("contentDiv");
+        for(let divObj of divList){
+            if(divObj.classList.contains("d-none") != true){
+                divObj.classList.add("d-none");
+            }
+        }
+        if (menuObj == btnList[0]) {
+            document.getElementById("div01").classList.remove("d-none");
+        } else if (menuObj == btnList[1]) {
+            document.getElementById("div02").classList.remove("d-none");
+        } else if (menuObj == btnList[2]) {
+            document.getElementById("div03").classList.remove("d-none");
+        } else if (menuObj == btnList[3]) {
+            document.getElementById("div04").classList.remove("d-none");
+        }
+    }
+</script>
+
+</html>

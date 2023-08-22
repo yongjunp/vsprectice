@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>asd.html</h3>
+
+    <div id="mainContents">
+        <div class="divSub">
+            sub1
+        </div>
+        <div class="divSub">
+            sub2
+        </div>
+        <div class="divSub">
+            sub3
+        </div>
+    </div>
+</body>
+<script>
+    let mainDivE1 = document.querySelector("#mainContents");
+    console.log(mainDivE1);
+    let childEls = mainDivE1.children;
+    console.log(childEls[1]);
+    let firstChildEl = mainDivE1.firstElementChild;
+
+    let lastChildEl = mainDivE1.lastElementChild;
+    console.log(firstChildEl)
+    console.log(lastChildEl)
+    console.log("---")
+    let conDivE1 = document.querySelector(".divSub");
+    console.log(conDivE1);
+    console.log("---")
+    let subDivE1 = document.querySelectorAll(".divSub");
+    console.log(subDivE1.length);
+    console.log(subDivE1[0]);
+</script>
+</html>

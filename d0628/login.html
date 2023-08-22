@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: 1px solid black;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        .borders {
+            border: 1px solid black;
+        }
+
+        body>div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tbody {
+            width: 800px;
+        }
+
+        .tdLeft {
+            width: 29%;
+        }
+
+        .tdRight {
+            width: 69%;
+        }
+
+        .tdRight>input {
+            width: 70%;
+        }
+        tfoot{
+            text-align: center;
+        }
+        .tfb{
+            margin: 5px 25px;
+            width: 100px;
+        }
+        .pNum{
+            width: auto;
+            display: flex;
+        }
+        .pNum>input{
+            width: 40px;
+            height: 17.5px;
+
+        }
+        .pNum>p{
+            text-align: center;
+            height: 17.5;
+            width: 16px;
+            margin: 0 auto;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        body{
+            background-color: beige;
+        }
+        input.st{
+            width: 137px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+
+        <table class="borders">
+            <th class="borders tbody" colspan="2">
+                <p>회원가입</p>
+            </th>
+            <tr class="borders tbody">
+                <td class="borders tdLeft">아이디</td>
+                <td class="borders tdRight"><input type="text" name="mid" placeholder="아이디"></td>
+            </tr class="borders">
+            <tr>
+                <td class="borders tdLeft">비밀번호</td>
+                <td class="borders tdRight"><input type="text" name="mpw" placeholder="비밀번호"></td>
+            </tr
+            <tr>
+                <td class="borders tdLeft">이메일</td>
+                <td class="borders tdRight"><input type="text" name="memail" placeholder="이메일"></td>
+            </tr>
+            <tr>
+                <td class="borders tdLeft">생년월일</td>
+                <td class="borders tdRight"><input type="date" name="mbrith" placeholder="아이디"></td>
+            </tr>
+            <tr>
+                <td class="borders tdLeft">전화번호</td>
+                <td class="borders tdRight pNum"><input type="text" name="firstNum" value="010" readonly><p>-</p><input type="text" class="st" name="sNum"><p>-</p><input type="text" class="st" name="tNum"></td>
+            </tr>
+            <tfoot class="tbody">
+                <td colspan="2"><input class="tfb" type="reset" value="초기화"><input class="tfb" type="submit" value="회원가입"></td>
+            </tfoot>
+        </table>
+
+    </form>
+
+</body>
+
+</html>

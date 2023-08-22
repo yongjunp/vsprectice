@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01_js.html</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 id="id01">ex01_js.html</h1>
+
+</body>
+<script>
+    // var, let, const
+    // var number = 1;
+    // let letVal = 'abc';
+    // letVal = 'ABC123'
+    // const constVal = true;   변수를
+    // constVal = false;  X     바꿀수없다
+    console.log('콘솔 출력')
+    var a = '문자';
+    var b = 1234;
+    var c = true;
+    var d = document.getElementById("id01")
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+
+    var varVal = 10;
+    console.log("varVal : " + varVal)
+
+    let letVal = 200;
+    console.log("letVal : " + letVal)
+    if(letVal > 100){
+        letVal = 100;
+        console.log("let Val : " + letVal)
+        let ifval = 1000;
+        var ifVarVal = 1000;
+    }
+    // console.log("let Val : " + ifVal)
+
+    console.log("ifVarVal : " + ifVarVal)
+
+    let letVal1 = 10;
+    letVal1 = '문자';
+    letVal = true;
+    letVal = document.getElementById("id01");
+    letVal1.innerText = "안녕하세요!"
+
+    let un;
+    console.log(un); // undefined
+
+    //function 함수이름( 매개변수 ... ) { }
+    function funcName(){
+        console.log("funcName() 호출")
+        return 100;
+    }
+    funcName();
+
+    
+</script>
+
+<script>
+    let abc = funcName();
+    console.log(abc);
+</script>
+</html>

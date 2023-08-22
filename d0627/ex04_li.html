@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04_li.html</title>
+    <style>
+        /* 1. 선택(태그선택자, id선택자, class선택자) 
+        2. 속성 : 값;*/
+        li {
+            border: 1px solid black;
+            list-style-type: none;
+            /* display: inline; */
+            display: inline-block;
+            /* display: block; */
+            /* display: none; */
+            /* float: left; */
+        }
+
+        li {
+            width: 80px;
+            text-align: center;
+            padding: 5px;
+            /* height: 30px; */
+            /* line-height: 30px; */
+        }
+        li:hover{
+           border-color : red; 
+           font-weight : bold;
+           background-color: beige;
+           cursor:pointer;
+        }
+        ul a{
+            text-decoration: none;
+        }
+        .fontRed{
+            color: red;
+        }
+        .font50{
+            font-size: 50px;
+        }
+        /* ul{
+            text-align: center;
+        } */
+        /* span, a{
+            font-size: 10px;
+        } */
+
+        /* ul{
+            font-size : 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <h3>ex04_li.html</h3>
+    <!-- ul,ol -->
+    <ul style="list-style: circle;">
+        <li>리스트1</li>
+        <li>리스트2</li>
+    </ul>
+    <ol type="i" start="3">
+        <li>리스트1</li>
+        <li>리스트1</li>
+    </ol>
+    <hr>
+    <ul id="menu">
+        <li>
+            <span class="fontRed tdnone">회원가입</span>
+        </li>
+        <li>
+            <span class="fontRed tdnone">로그인</span>
+        </li>
+        <li>
+            <a href="" class="fontRed tdnone">상품목록</a>
+        </li>
+    </ul>
+    <hr>
+    <a href="" > 링크 </a>
+
+
+</body>
+
+</html>

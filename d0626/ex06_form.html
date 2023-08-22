@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06_form.html</title>
+</head>
+<body>
+    <h3>ex06_form.html</h3>
+    <h4>회원가입 페이지</h4>
+    <!-- method = "get", methode = "post" -->
+    <form action="testPath" method = "">
+        <label for="inputId">아이디 : </label> <input type="text" name = "mid" required id = "inputId">
+        <br>
+        비밀번호 : <input type="text" name = "mpw">
+        <br>
+        이메일 : <input type="email" name ="mail">
+        <hr>
+        <input type="radio" name = "loc" value = "incheon" id = locincheon checked >
+        <label for="locincheon">인천</label>
+        <input type="radio" name = "loc" value = "seoul" id = "locseoul">
+        <label for="locseoul">서울</label>
+        <input type="radio" name = "loc" value = "busan" id = "locbusan">
+        <label for="locbusan">부산</label>
+        <label for="subjava">
+            <input type="checkbox" name = "subject" value = "JAVA" id = "subjava">
+            자바
+        </label>
+        <label for="suboracle">
+            <input type="checkbox" name = "subject" value = "ORACLE" id = "suboracle">
+            오라클
+        </label>
+        <label for="subhtml">
+            <input type="checkbox" name = "subject" value = "HTML" id = "subhtml">
+            HTML
+        </label>
+        
+        <input type="submit" value="회원가입">
+    </form>
+
+</body>
+</html>

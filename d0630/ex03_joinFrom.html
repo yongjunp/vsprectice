@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_joinFrom.html</title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        #idCheckMsg {
+            margin: 0;
+            font-size: 10px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ex03_joinFrom.html</h2>
+    <form action="testUrl" onsubmit="return joinFormCheck(this)" target="_blank">
+        <table>
+            <th colspan="2">회원가입</th>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="mid" id="inputMid" onkeyup="idLength(this)"
+                        placeholder="아이디는 5~8자리"><button type="button" onclick="idCheck()">중복확인</button>
+                    <p id="idCheckMsg"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="mpw"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>
+                    <input type="text" name="memailId"> @
+                    <input type="text" name="memailDomain" id="inputDomain">
+                    <select name="" id="" onchange="domainSelect(this)">
+                        <option value="">직접입력</option>
+                        <option value="naver.com">네이버</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" value="회원가입"></th>
+
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    let msgObj = document.getElementById("idCheckMsg");
+    function idLength(object) {
+        let idVal = object.value;
+        if (idVal.length == 0) {
+            console.log("아이디를 입력 해주세요!")
+            msgObj.innerText = "아이디를 입력 해주세요!";
+            msgObj.style.color = "red";
+        } else if (idVal.length < 5 || idVal.length > 8) {
+            console.log("아이디는 5에서 8자리 입니다.")
+            msgObj.innerText = "아이디는 5에서 8자리 입니다.";
+            msgObj.style.color = "red";
+        } else {
+            msgObj.innerText = "";
+            msgObj.style.color = "green";
+
+        }
+    }
+    let formMidCheck = false;
+    function idCheck() {
+        const mid = "abcdf";
+        let inputmid = document.getElementById("inputMid").value;
+        if (inputmid.length < 5 || inputmid.length > 8) {
+            msgObj.innerText = "아이디는 5에서 8자리 입니다.";
+            msgObj.style.color = "red";
+            return;
+        }
+        if (mid == inputmid) {
+            msgObj.innerText = "중복된 아이디입니다.";
+            msgObj.style.color = "red";
+            formMidCheck = false;
+        } else {
+            msgObj.innerText = "사용가능한 아이디입니다.";
+            msgObj.style.color = "green";
+            formMidCheck = true;
+            document.getElementById("inputMid").readOnly = true;
+        }
+
+    }
+    function domainSelect(selObj) {
+        document.getElementById("inputDomain").value = selObj.value;
+    }
+
+    function joinFormCheck(formObj) {
+        // id 입력 창에 아이디가 입력 되었는지
+        if (!formMidCheck) {
+            if(formObj.mid.value == ""){
+            alert("아이디를 입력해주세요.")
+            formObj.mid.focus();
+            return false;
+        }else{
+                alert("중복확인을 해주세요.")
+                formObj.mid.focus();
+                return false;
+        }
+
+        }
+        // 비밀번호 체크
+        if (formObj.mpw.value == "") {
+            alert("비밀번호를 입력해주세요.")
+            formObj.mpw.focus();
+            return false;
+        }
+        //이메일 체크
+        if (formObj.memailId.value == "" || formObj.memailDomain.value == "") {
+            alert("이메일을 입력해주세요.");
+            if(formObj.memailId.value == ""){
+                formObj.memailId.focus();
+                return false;
+            } else if(formObj.memailDomain.value == ""){
+                formObj.memailDomain.focus();
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+</script>
+
+</html>
